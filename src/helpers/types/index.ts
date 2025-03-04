@@ -4,7 +4,7 @@ type RegularPriceType = {
 };
 
 export type ProductType = {
-  id: number;
+  id: string;
   title: string;
   regular_price: RegularPriceType;
   image: string;
@@ -12,7 +12,7 @@ export type ProductType = {
 };
 
 export type BrandType = {
-  id: number;
+  id: string;
   title: string;
   sort: string;
   code: string;

@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px;
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  svg {
+    margin: 0 8px;
+    width: 48px;
+    height: 48px;
+    transition: all ease-in 0.3s;
+
+    &:hover {
+      filter: drop-shadow(0 0 2em #42b883aa);
+    }
+  }
+}

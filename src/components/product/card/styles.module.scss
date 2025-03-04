@@ -1,0 +1,16 @@
+.product {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 1rem;
+  color: white;
+
+  img {
+    max-width: 200px;
+    max-height: 200px;
+    transition: all ease-in 0.3s;
+  }
+
+  &:hover img {
+    filter: drop-shadow(0 0 2em #42b883aa);
+  }
+}

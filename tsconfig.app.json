@@ -20,5 +20,5 @@
       "@views/*": ["./views/*"],
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/declaration.d.ts"]
 }

@@ -1,5 +1,5 @@
-import type { ProductType } from "@helpers/types";
-import axios from "axios";
+import type { ProductType } from '@helpers/types';
+import axios from 'axios';
 
 const BASE_URL = `${import.meta.env.VITE_BACK_URL}/products`;
 

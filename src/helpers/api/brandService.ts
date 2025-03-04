@@ -1,5 +1,5 @@
-import type { BrandType } from "@helpers/types";
-import axios from "axios";
+import type { BrandType } from '@helpers/types';
+import axios from 'axios';
 
 const BASE_URL = `${import.meta.env.VITE_BACK_URL}/brands`;
 

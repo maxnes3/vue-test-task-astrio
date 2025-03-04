@@ -1,2 +1,2 @@
-export { BrandService } from "./brandService";
-export { ProductService } from "./productService";
+export { BrandService } from './brandService';
+export { ProductService } from './productService';
