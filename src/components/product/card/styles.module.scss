@@ -3,11 +3,16 @@
   border-radius: 16px;
   padding: 1rem;
   color: white;
+  transition: all ease-in 0.3s;
 
   img {
     max-width: 200px;
     max-height: 200px;
     transition: all ease-in 0.3s;
+  }
+
+  &:hover {
+    border-color: #42b883aa;
   }
 
   &:hover img {
