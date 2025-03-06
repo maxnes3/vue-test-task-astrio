@@ -167,22 +167,16 @@
   ],
   "basket": [
     {
-      "id": "f850",
-      "product": "2",
+      "id": "693b",
+      "product": "1",
       "count": 1,
-      "total_value": 36.87
+      "total_value": 27.12
     },
     {
-      "id": "4701",
-      "product": "7",
+      "id": "478c",
+      "product": "3",
       "count": 1,
-      "total_value": 123.4
-    },
-    {
-      "id": "7794",
-      "product": "4",
-      "count": 1,
-      "total_value": 41.23
+      "total_value": 28.91
     }
   ]
 }

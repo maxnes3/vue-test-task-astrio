@@ -6,33 +6,33 @@ import { ref } from 'vue';
 export const useBasketStore = defineStore('basket', () => {
   const basketItems = ref<BasketItemType[]>([]);
 
-  const handleGetAllBasketItems = async () => {
+  const getAllBasketItems = async () => {
     const response = await BasketService.getAllBasketItemsQueryFn();
     basketItems.value = response;
   };
 
-  const handleAddProductToBasket = async (product: ProductType) => {
+  const addProductToBasket = async (product: ProductType) => {
     const response = await BasketService.postItemToBasketQueryFn(product);
     if (!response) return;
-    handleGetAllBasketItems();
+    getAllBasketItems();
   };
 
-  const handleUpdateBasketItem = async (basketItem: BasketItemType) => {
+  const updateBasketItem = async (basketItem: BasketItemType) => {
     const response = await BasketService.putToBasketItemQueryFn(basketItem);
     if (!response) return;
-    handleGetAllBasketItems();
+    getAllBasketItems();
   };
 
-  const handleRemoveItemFromBasket = async (id: string) => {
+  const deleteItemFromBasket = async (id: string) => {
     await BasketService.deleteItemFromBasketQueryFn(id);
-    handleGetAllBasketItems();
+    getAllBasketItems();
   };
 
   return {
     basketItems,
-    handleGetAllBasketItems,
-    handleAddProductToBasket,
-    handleUpdateBasketItem,
-    handleRemoveItemFromBasket,
+    getAllBasketItems,
+    addProductToBasket,
+    updateBasketItem,
+    deleteItemFromBasket,
   };
 });

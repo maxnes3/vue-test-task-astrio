@@ -28,7 +28,7 @@ const handleNavigateToCatalog = () => router.push({ name: 'catalog' });
 const handleNavigateToBasket = () => router.push({ name: 'basket' });
 
 onMounted(() => {
-  basketStore.handleGetAllBasketItems();
+  basketStore.getAllBasketItems();
 });
 </script>
 

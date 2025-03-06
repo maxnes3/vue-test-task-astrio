@@ -1,7 +1,5 @@
 tr {
-  border-bottom: 2px solid #ddd;
   font-size: 20px;
-  margin-bottom: 8px;
 
   .item {
     display: flex;
@@ -26,7 +24,7 @@ tr {
 
   .count {
     display: flex;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
 
     button {
@@ -35,12 +33,13 @@ tr {
       font-weight: bold;
       color: white;
       border: none;
-      border-radius: 36px;
+      border-radius: 50%;
       background-color: #42b883aa;
       justify-content: center;
       align-items: center;
-      padding: 16px;
       margin: 0 8px;
+      width: 32px;
+      height: 32px;
       transition: all ease 0.3s;
 
       &:hover {

@@ -24,7 +24,7 @@ const brandName = computed(() => {
 });
 
 const handleAddProduct = async () => {
-  await basketStore.handleAddProductToBasket(product);
+  await basketStore.addProductToBasket(product);
 };
 </script>
 

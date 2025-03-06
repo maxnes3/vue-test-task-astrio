@@ -31,11 +31,11 @@ const productStore = useProductStore();
 
 const handleSetFilter = (brandId: number | 'all') => {
   selectedBrand.value = brandId;
-  productStore.handleFilterProductsByBrand(brandId);
+  productStore.filterProductsByBrand(brandId);
 };
 
 onMounted(() => {
-  brandStore.handleGetAllBrands();
+  brandStore.getAllBrands();
 });
 </script>
 

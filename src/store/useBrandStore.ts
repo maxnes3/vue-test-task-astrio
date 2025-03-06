@@ -6,9 +6,9 @@ import { ref } from 'vue';
 export const useBrandStore = defineStore('brand', () => {
   const brands = ref<BrandType[]>([]);
 
-  const handleGetAllBrands = async () => {
+  const getAllBrands = async () => {
     brands.value = await BrandService.getAllBrandsQueryFn();
   };
 
-  return { brands, handleGetAllBrands };
+  return { brands, getAllBrands };
 });

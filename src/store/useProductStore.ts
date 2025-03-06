@@ -6,17 +6,17 @@ import { ref } from 'vue';
 export const useProductStore = defineStore('product', () => {
   const products = ref<ProductType[]>([]);
 
-  const handleGetProductById = async (id: string) => {
+  const getProductById = async (id: string) => {
     const response = await ProductService.getProductByIdQueryFn(id);
     return response;
   };
 
-  const handleGetAllProducts = async () => {
+  const getAllProducts = async () => {
     const response = await ProductService.getAllProductsQueryFn();
     products.value = response;
   };
 
-  const handleFilterProductsByBrand = async (brandId: number | 'all') => {
+  const filterProductsByBrand = async (brandId: number | 'all') => {
     const queryFn =
       brandId === 'all'
         ? ProductService.getAllProductsQueryFn
@@ -28,8 +28,8 @@ export const useProductStore = defineStore('product', () => {
 
   return {
     products,
-    handleGetProductById,
-    handleGetAllProducts,
-    handleFilterProductsByBrand,
+    getProductById,
+    getAllProducts,
+    filterProductsByBrand,
   };
 });

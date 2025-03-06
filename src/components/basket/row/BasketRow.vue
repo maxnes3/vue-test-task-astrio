@@ -7,12 +7,14 @@
       <span> {{ brandName }} / {{ product?.title }} </span>
     </th>
     <th>${{ product?.regular_price.value }}</th>
-    <th :class="$style.count">
-      <button @click="handleRemoveFromCount">-</button>
-      <span>{{ item.count }}</span>
-      <button @click="handleAddToCount">+</button>
+    <th>
+      <div :class="$style.count">
+        <button @click="handleCountDownBasketItem">-</button>
+        <span>{{ item.count }}</span>
+        <button @click="handleCountUpBasketItem">+</button>
+      </div>
     </th>
-    <th>${{ item.total_value }}</th>
+    <th>${{ Math.round(item.total_value) }}</th>
     <th :class="$style.trash" @click="handleRemoveItem"><Trash /></th>
   </tr>
 </template>
@@ -35,19 +37,19 @@ const brandName = computed(() => {
   return brand ? brand.title : 'Unknown';
 });
 
-const handleRemoveFromCount = async () => {
+const handleCountDownBasketItem = async () => {
   if (item.count === 1) return;
   const newCount = item.count - 1;
-  basketStore.handleUpdateBasketItem({
+  basketStore.updateBasketItem({
     ...item,
     count: newCount,
     total_value: newCount * Number(product.value?.regular_price.value),
   });
 };
 
-const handleAddToCount = async () => {
+const handleCountUpBasketItem = async () => {
   const newCount = item.count + 1;
-  basketStore.handleUpdateBasketItem({
+  basketStore.updateBasketItem({
     ...item,
     count: newCount,
     total_value: newCount * Number(product.value?.regular_price.value),
@@ -55,12 +57,12 @@ const handleAddToCount = async () => {
 };
 
 const handleRemoveItem = async () => {
-  await basketStore.handleRemoveItemFromBasket(item.id);
+  await basketStore.deleteItemFromBasket(item.id);
 };
 
 onMounted(async () => {
-  brandStore.handleGetAllBrands();
-  product.value = await productStore.handleGetProductById(item.product);
+  brandStore.getAllBrands();
+  product.value = await productStore.getProductById(item.product);
 });
 </script>
 

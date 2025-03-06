@@ -17,7 +17,7 @@
         />
       </tbody>
     </table>
-    <h2 :class="$style.subtotal">Subtotal: ${{ subtotal }}</h2>
+    <h2 :class="$style.subtotal">Subtotal: ${{ Math.round(subtotal) }}</h2>
     <button :class="$style.submitButton">Checkout</button>
   </div>
 </template>
@@ -40,7 +40,7 @@ const columns = [
 ];
 
 onMounted(() => {
-  store.handleGetAllBasketItems();
+  store.getAllBasketItems();
 });
 </script>
 

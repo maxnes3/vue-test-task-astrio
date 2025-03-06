@@ -19,7 +19,7 @@ import { useProductStore } from '@/store';
 const store = useProductStore();
 
 onMounted(() => {
-  store.handleGetAllProducts();
+  store.getAllProducts();
 });
 </script>
 
