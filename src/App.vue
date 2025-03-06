@@ -1,9 +1,5 @@
-<script setup lang="ts">
-import { CatalogView } from '@views/catalog';
-</script>
-
 <template>
-  <CatalogView />
+  <router-view />
 </template>
 
 <style module lang="scss">

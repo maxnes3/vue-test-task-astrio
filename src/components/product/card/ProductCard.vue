@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.product">
+  <div :class="$style.product" @click="handleAddProduct">
     <img :src="product.image" :alt="product.title" />
     <h3>{{ product.title }}</h3>
     <p>Brand: {{ brandName }}</p>
@@ -11,16 +11,21 @@
 import { computed } from 'vue';
 import { useBrandStore } from '@/store';
 import type { ProductType } from '@helpers/types';
+import { useBasketStore } from '@/store/useBasketStore';
 
 const { product } = defineProps<{ product: ProductType }>();
 const brandStore = useBrandStore();
-
+const basketStore = useBasketStore();
 const brandName = computed(() => {
   const brand = brandStore.brands.find(
     (brand) => product.brand === Number(brand.id),
   );
   return brand ? brand.title : 'Unknown';
 });
+
+const handleAddProduct = async () => {
+  await basketStore.handleAddProductToBasket(product);
+};
 </script>
 
 <style module lang="scss">

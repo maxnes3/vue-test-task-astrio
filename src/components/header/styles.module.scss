@@ -1,19 +1,59 @@
 .header {
   display: flex;
+  position: sticky;
+  top: 0;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   padding: 16px;
+  background-color: #242424;
+  z-index: 1;
 
   .logo {
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
+
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  .basket {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+
+    span {
+      display: flex;
+      position: absolute;
+      bottom: -50%;
+      right: -50%;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 24px;
+      color: #fff;
+      background-color: #30a46c;
+      filter: drop-shadow(0 0 2em #42b883aa);
+      transition: all ease 0.3s;
+    }
+
+    &:hover span {
+      color: black;
+      background-color: #0efaa5;
+    }
   }
 
   svg {
     margin: 0 8px;
-    width: 48px;
-    height: 48px;
     transition: all ease-in 0.3s;
 
     &:hover {

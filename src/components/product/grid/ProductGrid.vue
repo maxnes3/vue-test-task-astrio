@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h2>Products</h2>
+    <h2>Catalog</h2>
     <div :class="$style.grid">
       <ProductCard
         v-for="product in store.products"

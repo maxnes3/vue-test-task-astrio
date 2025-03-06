@@ -45,15 +45,9 @@ onMounted(() => {
 .active {
   display: flex;
   font-weight: bold;
-  color: #42b883aa;
+  color: white;
+  background-color: #42b883aa;
   align-items: center;
   filter: drop-shadow(0 0 2em #42b883aa);
-
-  &::before {
-    content: '>';
-    font-size: 32px;
-    color: #42b883aa;
-    margin-right: 8px;
-  }
 }
 </style>

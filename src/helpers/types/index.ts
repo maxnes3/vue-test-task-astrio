@@ -17,3 +17,10 @@ export type BrandType = {
   sort: string;
   code: string;
 };
+
+export type BasketItemType = {
+  id: string;
+  product: string;
+  count: number;
+  total_value: number;
+};

@@ -6,18 +6,30 @@ import { ref } from 'vue';
 export const useProductStore = defineStore('product', () => {
   const products = ref<ProductType[]>([]);
 
+  const handleGetProductById = async (id: string) => {
+    const response = await ProductService.getProductByIdQueryFn(id);
+    return response;
+  };
+
   const handleGetAllProducts = async () => {
     const response = await ProductService.getAllProductsQueryFn();
     products.value = response;
   };
 
   const handleFilterProductsByBrand = async (brandId: number | 'all') => {
-    const response = await ProductService.getAllProductsQueryFn();
-    products.value =
+    const queryFn =
       brandId === 'all'
-        ? response
-        : response.filter((product) => product.brand === brandId);
+        ? ProductService.getAllProductsQueryFn
+        : () => ProductService.getProductsByBrandQueryFn(brandId);
+
+    const response = await queryFn();
+    products.value = response;
   };
 
-  return { products, handleGetAllProducts, handleFilterProductsByBrand };
+  return {
+    products,
+    handleGetProductById,
+    handleGetAllProducts,
+    handleFilterProductsByBrand,
+  };
 });

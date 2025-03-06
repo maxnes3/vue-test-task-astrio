@@ -1,0 +1,33 @@
+.basket {
+  color: white;
+  padding: 16px;
+}
+
+table {
+  width: 100%;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: end;
+}
+
+.submitButton {
+  display: flex;
+  justify-self: end;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 32px;
+  background-color: #42b883aa;
+  align-items: center;
+  padding: 16px 32px;
+  transition: all ease 0.3s;
+
+  &:hover {
+    color: black;
+    background-color: #0efaa5;
+    filter: drop-shadow(0 0 2em #42b883aa);
+  }
+}

@@ -12,4 +12,14 @@ ul {
 li {
   cursor: pointer;
   padding: 0.5rem;
+  margin: 0.2rem;
+  border-radius: 25px;
+  transition: all ease 0.3s;
+
+  &:hover {
+    font-weight: bold;
+    color: black;
+    background-color: #0efaa5;
+    filter: drop-shadow(0 0 2em #42b883aa);
+  }
 }
